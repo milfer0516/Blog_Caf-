@@ -52,7 +52,7 @@ h4 {
     font-size: 2.8rem;
 }
 img {
-    max-width: 100%;
+    width: 100%;
 }
 /* Utilidades */
 
@@ -145,6 +145,10 @@ img {
     text-transform: uppercase;
     font-weight: 700;
     margin-bottom: 2rem;
+    border: none;
+}
+.boton:hover {
+    cursor: pointer;
 }
 .boton--primario {
     background-color: var(--negro);
@@ -169,14 +173,18 @@ img {
     border: none;
     margin-bottom: 0;
 }
-.widget-curso__label {
+.widget-curso__label,
+.curso__label {
     font-family: var(--fuenteHeading);
     font-weight: 700;
 }
-.widget-curso__info {
+.widget-curso__info,
+.curso__info {
     font-weight: 400;
 }
 .widget-curso,
+.curso,
+.curso__info,
 .widget-curso__info {
     font-size: 2rem;
 }
@@ -206,5 +214,80 @@ img {
     .sobre-nosotros {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+/* Pagina Cursos */
+.curso {
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--gris);
+}
+@media (min-width: 768px) {
+    .curso {
+        display: flex;
+        justify-content: space-between;
+    }
+    .curso__informacion {
+        flex-basis: calc(66.6% - 1rem);
+    }
+    .curso__imagen {
+        flex-basis: calc(33.3% - 1rem);
+    }
+}
+.curso:last-of-type {
+    border: none;
+}
+/* .curso__label {
+    font-family: var(--fuenteHeading);
+    font-weight: 700;
+}
+.curso__info {
+    font-weight: 400;
+}
+.curso,
+.curso__info {
+    font-size: 2rem;
+} */
+.parrafo-entrada {
+    margin-bottom: 3rem;
+}
+
+/* Pagina contacto */
+
+.contacto-bg {
+    background-image: url(../img/contacto.jpg);
+    height: 40rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.formulario {
+    background-color: var(--blanco);
+    margin: -5rem auto 0 auto;
+    width: 95%;
+    padding: 5rem;
+}
+.campo__field--textarea {
+    height: 10rem;
+    width: 188px;
+}
+@media (min-width: 768px) {
+    .campo {
+        display: flex;
+        margin-bottom: 2rem;
+        /*  gap: 2rem; */ /* Esta propiedad tambien nos para separar el label del input */
+    }
+    .campo__label {
+        flex: 0 0 9rem;
+        text-align: right;
+        padding-right: 2rem; /* Con esta propiedad separo los labels de los inputs */
+    }
+    .campo__field {
+        flex: 1; /* La propiedad flex-1 nos sirve para el factor de cercimiento convirtiendose en el numero 10 si el label
+        crecio 90px los inuputs van a crecer 1 vez por pixel */
+        border: 1px solid var(--gris);
+    }
+    .campo__field--textarea {
+        height: 20rem;
     }
 }
