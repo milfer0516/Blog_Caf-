@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="no-webp" lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Blog de Café</title>
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <meta name="description" content="Pagina web blog de café">
+       <!--  <link rel="preconnect" href="https://fonts.gstatic.com" /> -->
         <!-- Prefetch -->
         <link rel="prefetch" href="nosotros.html" as="document">
         
@@ -58,8 +59,8 @@
                 <article class="entrada">
                     <div class="entrada__imagen">
                         <picture>
-                            <source loading="lazy" srcset="img/blog1.webp" type="image/webp">
-                            <img  src="img/blog1.jpg" alt="imagen blog" loading="lazy" />
+                            <source loading="lazy" srcset="/img/blog1.webp" type="image/webp">
+                            <img  src="/img/blog1.jpg" alt="imagen blog" loading="lazy" />
                         </picture>
                     </div>
                     <div class="entrada__contenido">
@@ -132,7 +133,7 @@
                         <span class="widget-curso__info">20</span>
                     </p>
                     <a href="entrada.html" class="boton boton--secundario"
-                            >Más Información</a
+                            >Más Información sobre nuestros cursos</a
                         >
                    </li>
 
@@ -144,7 +145,7 @@
                     <p class="widget-curso__label">Cupo:
                         <span class="widget-curso__info">20</span>
                     </p>
-                    <a href="entrada.html" class="boton boton--secundario">Más Información</a >
+                    <a href="entrada.html" class="boton boton--secundario">Más Información sobre nuestros cursos</a >
                    </li>
                 </ul>
                 
@@ -169,5 +170,7 @@
                     </nav>
                 </div>
         </footer>
+        <script src="/js/modernizr.js"></script>
+        <script src="/js/script.js"></script>
     </body>
 </html>

@@ -67,9 +67,13 @@ img {
 }
 
 /* Header */
-
-.header {
+.web .header {
+    background-image: url(../img/banner.jpg);
+}
+.no-webp .header {
     background-image: url(../img/banner.jpg); /* Como la imagen se encuetra en la carpeta css se busca con los dos punto y la barra inclinada */
+}
+.header {
     height: 60rem;
     background-size: cover; /* para que la imagen todo el espacio disponible */
     background-repeat: no-repeat;
@@ -254,7 +258,20 @@ img {
 }
 
 /* Pagina contacto */
-
+.error {
+    background-color: #bd2000;
+    text-align: center;
+    padding: 1rem;
+    color: var(--blanco);
+    text-transform: uppercase;
+}
+.enviado {
+    background-color: rgb(24, 175, 19);
+    text-align: center;
+    padding: 1rem;
+    color: var(--blanco);
+    text-transform: uppercase;
+}
 .contacto-bg {
     background-image: url(../img/contacto.jpg);
     height: 40rem;
