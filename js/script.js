@@ -5,6 +5,10 @@ const inputNombre = document.querySelector("#nombre");
 const inputEmail = document.querySelector("#email");
 const mensaje = document.querySelector("#mensaje");
 
+inputNombre.addEventListener("input", capturaDatos);
+inputEmail.addEventListener("input", capturaDatos);
+mensaje.addEventListener("input", capturaDatos);
+
 const datos = {
     nombre: "",
     email: "",
@@ -18,22 +22,15 @@ formulario.addEventListener("submit", (event) => {
 
     const { nombre, email, mensaje } = datos;
     if (nombre === "" || email === "" || mensaje === "") {
-        mostrarError("Todos los campos son obligatorios");
+        mostrarAlerta("Todos los campos son obligatorios", true);
         return;
-    } else {
-        mensajeEnviado("Datos enviados exitosamente");
     }
-
     /* Enviar formulario */
-
+    mostrarAlerta("Datos enviados con exito");
     /* console.log("Enviando formulario"); */
 });
 
 /* Capturando los datos del formulario */
-
-inputNombre.addEventListener("input", capturaDatos);
-inputEmail.addEventListener("input", capturaDatos);
-mensaje.addEventListener("input", capturaDatos);
 
 // Esta funcion es donde se captura los datos que se escriben en el
 // en el formulario
@@ -43,33 +40,43 @@ function capturaDatos(event) {
     datos[event.target.id] = event.target.value;
     /* console.log(datos); */
 }
+// Mostrar alerta
+
+function mostrarAlerta(mensaje, error = null) {
+    const alerta = document.createElement("p");
+    alerta.textContent = mensaje;
+    if (error) {
+        alerta.classList.add("error");
+    } else {
+        alerta.classList.add("enviado");
+    }
+
+    formulario.appendChild(alerta);
+
+    // Aca remueve la alerta
+    setTimeout(() => {
+        alerta.remove();
+    }, 4000);
+}
 // Funcion que muestra el error del formulario
-function mostrarError(mensaje) {
-    const error = document.createElement("P");
-    error.textContent = mensaje;
-    error.classList.add("error");
+// function mostrarError(mensaje) {
+//     formulario.appendChild(error);
 
-    formulario.appendChild(error);
+//     console.log(error);
+// }
 
-    setTimeout(() => {
-        error.remove();
-    }, 4000);
+// //Funcion que envia los datos del formulario
 
-    console.log(error);
-}
+// function mensajeEnviado(mensaje) {
+//     const envioDatos = document.createElement("P");
+//     envioDatos.textContent = mensaje;
+//     envioDatos.classList.add("enviado");
 
-//Funcion que envia los datos del formulario
+//     formulario.appendChild(envioDatos);
 
-function mensajeEnviado(mensaje) {
-    const envioDatos = document.createElement("P");
-    envioDatos.textContent = mensaje;
-    envioDatos.classList.add("enviado");
+//     setTimeout(() => {
+//         envioDatos.remove();
+//     }, 4000);
 
-    formulario.appendChild(envioDatos);
-
-    setTimeout(() => {
-        envioDatos.remove();
-    }, 4000);
-
-    console.log(mensaje);
-}
+//     console.log(mensaje);
+// }
